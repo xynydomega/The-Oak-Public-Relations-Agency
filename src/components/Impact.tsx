@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Play, ArrowRight } from "lucide-react";
+import impactImg from "../assets/images/lighthouse_cliff_1783358132203.jpg";
 
 export const Impact = () => {
   return (
@@ -49,7 +50,7 @@ export const Impact = () => {
             className="relative group aspect-square overflow-hidden rounded-[2.5rem] lg:rounded-[3.5rem] shadow-2xl border border-white/5"
           >
             <img 
-              src="/src/assets/images/lighthouse_cliff_1783358132203.jpg" 
+              src={impactImg} 
               alt="Impact" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
             />

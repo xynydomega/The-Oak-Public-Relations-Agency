@@ -1,4 +1,5 @@
 import { ArrowUp } from "lucide-react";
+import logo from "../assets/images/logo.png.png";
 
 export const Footer = () => {
   const scrollToTop = () => {
@@ -11,7 +12,7 @@ export const Footer = () => {
         {/* Logo */}
         <div className="flex items-center gap-3">
           <img 
-            src="/src/assets/images/logo.png.png" 
+            src={logo} 
             alt="The OAK Logo" 
             className="w-12 h-12 object-contain" 
           />

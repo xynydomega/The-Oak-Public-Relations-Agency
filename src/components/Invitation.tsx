@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
+import inviteImg from "../assets/images/team_building_collaboration_1783400524104.jpg";
 
 export const Invitation = () => {
   return (
@@ -7,7 +8,7 @@ export const Invitation = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/src/assets/images/team_building_collaboration_1783400524104.jpg" 
+          src={inviteImg} 
           alt="Collaboration" 
           className="w-full h-full object-cover opacity-30"
         />

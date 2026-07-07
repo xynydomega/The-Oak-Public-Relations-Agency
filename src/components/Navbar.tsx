@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
+import logo from "../assets/images/logo.png.png";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,7 @@ export const Navbar = () => {
         {/* Logo - clickable */}
         <div className="flex items-center gap-2 lg:gap-4 cursor-pointer">
           <img 
-            src="/src/assets/images/logo.png.png" 
+            src={logo} 
             alt="The Oak Logo" 
             className="w-10 h-10 lg:w-14 lg:h-14 object-contain" 
           />

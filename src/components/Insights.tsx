@@ -1,19 +1,22 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
+import deskImg from "../assets/images/insight_desk_book_1783358144019.jpg";
+import leavesImg from "../assets/images/insight_oak_leaves_1783358154623.jpg";
+import forestImg from "../assets/images/insight_misty_forest_1783358165144.jpg";
 
 const articles = [
   {
-    image: "/src/assets/images/insight_desk_book_1783358144019.jpg",
+    image: deskImg,
     title: "Why reputation is your strongest asset",
     category: "Strategy",
   },
   {
-    image: "/src/assets/images/insight_oak_leaves_1783358154623.jpg",
+    image: leavesImg,
     title: "Building trust in complex times",
     category: "Communication",
   },
   {
-    image: "/src/assets/images/insight_misty_forest_1783358165144.jpg",
+    image: forestImg,
     title: "The value of consistent communication",
     category: "Impact",
   },

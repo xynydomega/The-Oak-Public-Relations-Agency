@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
+import heroImg from "../assets/images/hero.png";
 
 export const Hero = () => {
   return (
@@ -7,7 +8,7 @@ export const Hero = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/src/assets/images/hero.png" 
+          src={heroImg} 
           alt="Majestic Oak" 
           className="w-full h-full object-cover opacity-60"
         />

@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight, Sprout } from "lucide-react";
+import rootsImg from "../assets/images/mossy_tree_roots_1783358118304.jpg";
 
 export const Foundation = () => {
   return (
@@ -14,7 +15,7 @@ export const Foundation = () => {
         {/* Left: Image */}
         <div className="h-[400px] lg:h-auto relative overflow-hidden">
           <img 
-            src="/src/assets/images/mossy_tree_roots_1783358118304.jpg" 
+            src={rootsImg} 
             alt="Roots" 
             className="w-full h-full object-cover grayscale-[0.2]"
           />
