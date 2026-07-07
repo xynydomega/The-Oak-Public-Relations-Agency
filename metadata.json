@@ -1,0 +1,6 @@
+{
+  "name": "The Oak PR Agency",
+  "description": "A sophisticated, premium website for a public relations agency, featuring organic design elements and a refined aesthetic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-lora: "Lora", serif;
+  --font-montserrat: "Montserrat", sans-serif;
+  
+  --color-brand-dark: #0a0c0a;
+  --color-brand-cream: #f4f1ea;
+  --color-brand-gold: #c5a059;
+  --color-brand-green-dark: #1a241a;
+  --color-brand-nav-bg: #EFEAE2;
+  --color-brand-nav-text: #1A1A1A;
+  --color-brand-green-accent: #2F4F3E;
+  --color-brand-brown-accent: #9C6B3E;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-dark text-white font-sans antialiased;
+  }
+}
+
+.serif-italic {
+  @apply font-serif italic;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
