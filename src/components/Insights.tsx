@@ -21,18 +21,18 @@ const articles = [
 
 export const Insights = () => {
   return (
-    <div className="h-full flex items-center justify-center p-8 lg:p-20">
-      <div className="bg-[#1C1B17] text-[#EFEAE2] w-full max-w-7xl rounded-[3rem] border border-white/10 shadow-2xl overflow-hidden flex flex-col lg:flex-row backdrop-blur-xl bg-black/40">
+    <div className="h-full flex items-center justify-center p-4 lg:p-20">
+      <div className="bg-[#1C1B17] text-[#EFEAE2] w-full max-w-7xl rounded-3xl lg:rounded-[3rem] border border-white/10 shadow-2xl overflow-hidden flex flex-col lg:flex-row backdrop-blur-xl bg-black/40">
         {/* Left Side Title */}
-        <div className="lg:w-1/3 p-12 lg:p-20 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col justify-between relative overflow-hidden">
+        <div className="lg:w-1/3 p-8 lg:p-20 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col justify-between relative overflow-hidden">
           <div className="relative z-10">
-            <h2 className="text-4xl lg:text-5xl font-lora font-bold leading-tight">
+            <h2 className="text-3xl lg:text-5xl font-lora font-bold leading-tight">
               Insights that inform. <br />
               <span className="italic text-[#9C6B3E]">Perspectives that shape.</span>
             </h2>
           </div>
           
-          <button className="mt-12 flex items-center gap-3 text-xs font-bold tracking-widest uppercase group font-montserrat relative z-10">
+          <button className="mt-8 lg:mt-12 flex items-center gap-3 text-xs font-bold tracking-widest uppercase group font-montserrat relative z-10">
             Explore Insights
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>

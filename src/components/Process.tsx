@@ -26,7 +26,7 @@ const steps = [
 
 export const Process = () => {
   return (
-    <div className="h-full flex flex-col justify-center px-8 lg:px-20 py-20 relative overflow-hidden">
+    <div className="h-full flex flex-col justify-center px-6 lg:px-20 py-16 lg:py-20 relative overflow-hidden">
       <div className="max-w-6xl mx-auto w-full z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -38,20 +38,20 @@ export const Process = () => {
             opacity: { duration: 0.8 },
             y_initial: { duration: 0.8 }
           }}
-          className="flex justify-center mb-12"
+          className="flex justify-center mb-8 lg:mb-12"
         >
           <div className="relative group">
             {/* Animated glow rings */}
             <div className="absolute inset-0 rounded-full bg-[#9C6B3E]/20 blur-xl group-hover:bg-[#9C6B3E]/30 transition-colors duration-700" />
             <div className="absolute -inset-4 rounded-full border border-[#9C6B3E]/10 animate-[spin_10s_linear_infinite]" />
             
-            <div className="w-24 h-24 rounded-full bg-[#2F4F3E] flex items-center justify-center border border-[#9C6B3E]/30 shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative z-10">
-              <Footprints className="w-12 h-12 text-[#9C6B3E]" strokeWidth={1} />
+            <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-[#2F4F3E] flex items-center justify-center border border-[#9C6B3E]/30 shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative z-10">
+              <Footprints className="w-10 h-10 lg:w-12 lg:h-12 text-[#9C6B3E]" strokeWidth={1} />
             </div>
           </div>
         </motion.div>
 
-        <h2 className="text-4xl lg:text-5xl font-lora font-bold text-center mb-32 text-[#EFEAE2] lowercase first-letter:uppercase">
+        <h2 className="text-3xl lg:text-5xl font-lora font-bold text-center mb-16 lg:mb-32 text-[#EFEAE2] lowercase first-letter:uppercase">
           Our approach is rooted in <span className="italic text-[#9C6B3E]">purpose</span>
         </h2>
 

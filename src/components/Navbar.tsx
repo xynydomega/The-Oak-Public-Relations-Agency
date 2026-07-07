@@ -1,30 +1,81 @@
-export const Navbar = () => {
-  return (
-    <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 flex justify-between items-center px-6 lg:px-8 py-1 bg-brand-nav-bg border border-brand-brown-accent/20 rounded-full shadow-lg">
-      {/* Logo - clickable */}
-      <div className="flex items-center gap-4 cursor-pointer">
-        <img 
-          src="/src/assets/images/logo.png.png" 
-          alt="The Oak Logo" 
-          className="w-14 h-14 object-contain" 
-        />
-        <div className="flex flex-col leading-none font-lora">
-          <span className="text-brand-nav-text text-lg tracking-tight font-extrabold uppercase">The OAK</span>
-          <span className="text-brand-nav-text/80 text-[7px] sm:text-[8px] uppercase tracking-[0.2em] font-bold">Public Relations Agency</span>
-        </div>
-      </div>
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { Menu, X } from "lucide-react";
 
-      {/* Nav Links - clickable */}
-      <div className="hidden lg:flex items-center gap-12">
-        <div className="flex gap-10 text-[11px] font-extrabold tracking-[0.2em] uppercase text-brand-nav-text font-montserrat">
-          <a href="#" className="hover:text-brand-brown-accent transition-colors">About</a>
-          <a href="#" className="hover:text-brand-brown-accent transition-colors">Our Approach</a>
-          <a href="#" className="hover:text-brand-brown-accent transition-colors">Insights</a>
+export const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navLinks = [
+    { name: "About", href: "#" },
+    { name: "Our Approach", href: "#" },
+    { name: "Insights", href: "#" },
+  ];
+
+  return (
+    <>
+      <nav className="fixed top-4 lg:top-6 left-1/2 -translate-x-1/2 w-[92%] lg:w-[95%] max-w-6xl z-50 flex justify-between items-center px-4 lg:px-8 py-1 lg:py-1 bg-brand-nav-bg border border-brand-brown-accent/20 rounded-full shadow-lg">
+        {/* Logo - clickable */}
+        <div className="flex items-center gap-2 lg:gap-4 cursor-pointer">
+          <img 
+            src="/src/assets/images/logo.png.png" 
+            alt="The Oak Logo" 
+            className="w-10 h-10 lg:w-14 lg:h-14 object-contain" 
+          />
+          <div className="flex flex-col leading-none font-lora">
+            <span className="text-brand-nav-text text-base lg:text-lg tracking-tight font-extrabold uppercase">The OAK</span>
+            <span className="text-brand-nav-text/80 text-[6px] lg:text-[8px] uppercase tracking-[0.2em] font-bold">Public Relations Agency</span>
+          </div>
         </div>
-        <button className="bg-brand-green-accent border-2 border-brand-brown-accent px-8 py-3 text-[11px] font-extrabold tracking-widest uppercase text-white hover:bg-brand-brown-accent transition-all rounded-full shadow-sm font-montserrat">
-          Contact Us
+
+        {/* Desktop Nav Links */}
+        <div className="hidden lg:flex items-center gap-12">
+          <div className="flex gap-10 text-[11px] font-extrabold tracking-[0.2em] uppercase text-brand-nav-text font-montserrat">
+            {navLinks.map((link) => (
+              <a key={link.name} href={link.href} className="hover:text-brand-brown-accent transition-colors">{link.name}</a>
+            ))}
+          </div>
+          <button className="bg-brand-green-accent border-2 border-brand-brown-accent px-8 py-3 text-[11px] font-extrabold tracking-widest uppercase text-white hover:bg-brand-brown-accent transition-all rounded-full shadow-sm font-montserrat">
+            Contact Us
+          </button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button 
+          className="lg:hidden p-2 text-brand-nav-text hover:text-brand-brown-accent transition-colors"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed inset-0 z-40 lg:hidden bg-brand-nav-bg/95 backdrop-blur-md pt-24 px-8"
+          >
+            <div className="flex flex-col gap-8">
+              {navLinks.map((link) => (
+                <a 
+                  key={link.name} 
+                  href={link.href} 
+                  className="text-2xl font-lora font-bold text-brand-nav-text hover:text-brand-brown-accent transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ))}
+              <hr className="border-brand-brown-accent/20" />
+              <button className="w-full bg-brand-green-accent border-2 border-brand-brown-accent px-8 py-5 text-sm font-extrabold tracking-widest uppercase text-white hover:bg-brand-brown-accent transition-all rounded-full shadow-sm font-montserrat">
+                Contact Us
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };

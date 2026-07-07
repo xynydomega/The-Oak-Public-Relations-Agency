@@ -19,7 +19,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-5xl lg:text-7xl font-lora font-bold leading-[1.1] tracking-tight mb-8"
+          className="text-4xl sm:text-5xl lg:text-7xl font-lora font-bold leading-[1.1] tracking-tight mb-6 lg:mb-8"
         >
           Reputation is built with <span className="italic font-medium text-brand-brown-accent">intention.</span>
         </motion.h1>
@@ -28,7 +28,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-          className="text-lg lg:text-xl text-white/80 max-w-2xl font-montserrat font-medium leading-relaxed mb-10"
+          className="text-base sm:text-lg lg:text-xl text-white/80 max-w-2xl font-montserrat font-medium leading-relaxed mb-8 lg:mb-10"
         >
           Strategic communication that helps organisations earn trust, shape perception, and create lasting impact.
         </motion.p>

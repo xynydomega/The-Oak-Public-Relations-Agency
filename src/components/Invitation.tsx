@@ -22,16 +22,16 @@ export const Invitation = () => {
         transition={{ duration: 1 }}
         className="relative z-10 max-w-3xl"
       >
-        <h2 className="text-5xl lg:text-8xl font-lora font-bold leading-tight mb-8 text-[#EFEAE2]">
+        <h2 className="text-4xl sm:text-5xl lg:text-8xl font-lora font-bold leading-tight mb-6 lg:mb-8 text-[#EFEAE2]">
           Let's build something <br />
           <span className="italic text-[#9C6B3E]">that lasts.</span>
         </h2>
 
-        <p className="text-xl lg:text-2xl text-[#EFEAE2]/70 max-w-xl leading-relaxed mb-12 font-montserrat font-light">
+        <p className="text-lg lg:text-2xl text-[#EFEAE2]/70 max-w-xl leading-relaxed mb-10 lg:mb-12 font-montserrat font-light">
           We're here to help you communicate with purpose and lead with confidence.
         </p>
 
-        <button className="group flex items-center gap-4 bg-[#9C6B3E] border-[3px] border-[#2F4F3E] px-12 py-6 rounded-full text-sm font-bold tracking-widest uppercase text-white shadow-[0_20px_40px_-10px_rgba(47,79,62,0.6)] hover:shadow-[0_30px_60px_-10px_rgba(47,79,62,0.8)] hover:-translate-y-2 transition-all duration-300 font-montserrat">
+        <button className="group flex items-center gap-4 bg-[#9C6B3E] border-[3px] border-[#2F4F3E] px-8 lg:px-12 py-4 lg:py-6 rounded-full text-xs lg:text-sm font-bold tracking-widest uppercase text-white shadow-[0_20px_40px_-10px_rgba(47,79,62,0.6)] hover:shadow-[0_30px_60px_-10px_rgba(47,79,62,0.8)] hover:-translate-y-2 transition-all duration-300 font-montserrat">
           Start a Conversation
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </button>
