@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowRight, BookOpen, MessageSquare, TrendingUp, Sparkles, Share2 } from "lucide-react";
 import { Insights as InsightsSection } from "../components/Insights";
+import insightHeroImg from "../assets/images/Insight hero.png";
 import deskImg from "../assets/images/insight_desk_book_1783358144019.jpg";
 import leavesImg from "../assets/images/insight_oak_leaves_1783358154623.jpg";
 import forestImg from "../assets/images/insight_misty_forest_1783358165144.jpg";
@@ -15,25 +16,48 @@ export const Insights = () => {
   ];
 
   return (
-    <div className="pt-24 lg:pt-32 pb-20">
-      {/* Hero Section */}
-      <section className="px-6 lg:px-20 mb-24">
-        <div className="max-w-7xl mx-auto">
+    <div className="pb-20">
+      {/* Hero Section with Background Image */}
+      <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden mb-24">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={insightHeroImg} 
+            alt="Insights & Perspectives" 
+            className="w-full h-full object-cover grayscale-[0.2] brightness-50"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-[#0A1A10]" />
+        </div>
+
+        <div className="relative z-10 px-6 lg:px-20 text-center max-w-7xl mx-auto pt-20">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            transition={{ duration: 1, ease: "easeOut" }}
           >
-            <h1 className="text-5xl lg:text-8xl font-lora font-bold text-[#EFEAE2] mb-8 leading-tight">
+            <h1 className="text-5xl lg:text-9xl font-lora font-bold text-[#EFEAE2] mb-8 leading-tight">
               Insights & <span className="italic text-[#9C6B3E]">Perspectives.</span>
             </h1>
-            <p className="text-lg lg:text-xl text-[#EFEAE2]/70 font-montserrat max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg lg:text-2xl text-[#EFEAE2]/90 font-montserrat max-w-3xl mx-auto leading-relaxed font-light">
               Thought leadership at the intersection of strategy, communication, and enduring reputation.
             </p>
           </motion.div>
+        </div>
+        
+        {/* Scroll Indicator */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 1 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
+        >
+          <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#EFEAE2]/40 font-montserrat">Explore Perspectives</span>
+          <div className="w-px h-12 bg-gradient-to-b from-[#9C6B3E] to-transparent" />
+        </motion.div>
+      </section>
 
-          {/* Featured Article */}
+      <div className="max-w-7xl mx-auto">
+        {/* Featured Article */}
+        <section className="px-6 lg:px-20 mb-24">
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -62,10 +86,9 @@ export const Insights = () => {
               </div>
             </div>
           </motion.div>
-        </div>
-      </section>
+        </section>
 
-      {/* Categories & Filter */}
+        {/* Categories & Filter */}
       <section className="px-6 lg:px-20 mb-20">
         <div className="max-w-7xl mx-auto flex flex-wrap gap-4 justify-center">
           {categories.map((cat) => (
@@ -174,5 +197,6 @@ export const Insights = () => {
         </div>
       </section>
     </div>
-  );
+  </div>
+);
 };
