@@ -21,6 +21,17 @@
   body {
     @apply bg-brand-dark text-white font-sans antialiased;
   }
+  a, a *, a:hover, a:hover *, a:active, a:active *, a:focus, a:focus * {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+  }
+}
+
+a, a *, a::before, a::after {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
 
 .serif-italic {

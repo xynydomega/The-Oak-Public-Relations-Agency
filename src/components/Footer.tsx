@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowUp } from "lucide-react";
 import logo from "../assets/images/logo.png.png";
 
@@ -10,7 +11,10 @@ export const Footer = () => {
     <footer className="bg-brand-dark border-t border-white/10 pt-20 pb-10 px-8 lg:px-20">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
         {/* Logo */}
-        <div className="flex items-center gap-3">
+        <Link 
+          to="/" 
+          className="flex items-center gap-3"
+        >
           <img 
             src={logo} 
             alt="The OAK Logo" 
@@ -20,11 +24,11 @@ export const Footer = () => {
             <span className="text-sm font-extrabold tracking-widest uppercase text-[#EFEAE2]">The OAK</span>
             <span className="text-[7px] tracking-[0.3em] uppercase text-white/40 font-montserrat font-bold">Public Relations Agency</span>
           </div>
-        </div>
+        </Link>
 
         {/* Navigation */}
         <nav className="flex gap-8 text-[10px] font-extrabold tracking-[0.2em] uppercase text-white/60 font-montserrat">
-          <a href="#" className="hover:text-[#9C6B3E] transition-colors">About</a>
+          <Link to="/about" className="hover:text-[#9C6B3E] transition-colors">About</Link>
           <a href="#" className="hover:text-[#9C6B3E] transition-colors">Our Approach</a>
           <a href="#" className="hover:text-[#9C6B3E] transition-colors">Insights</a>
           <a href="#" className="hover:text-[#9C6B3E] transition-colors">Contact</a>
