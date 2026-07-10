@@ -7,24 +7,58 @@ import logo from "../assets/images/logo.png.png";
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const isAboutPage = location.pathname === "/about";
-  const isInsightsPage = location.pathname === "/insights";
+  
+  const pageMap: Record<string, string> = {
+    "Home": "/",
+    "About": "/about",
+    "Our Approach": "/approach",
+    "Insights": "/insights",
+    "Contact Us": "/contact"
+  };
 
-  const navLinks = [
-    { 
-      name: isAboutPage ? "Home" : (isInsightsPage ? "Home" : "About"), 
-      href: isAboutPage ? "/" : (isInsightsPage ? "/" : "/about") 
-    },
-    { name: "Insights", href: "/insights" },
-    { name: "Our Approach", href: "#" },
-  ];
+  // The 3 links shown in the main navigation list (excluding the active one)
+  const [mainSlots, setMainSlots] = useState([
+    "About",
+    "Our Approach",
+    "Insights"
+  ]);
+
+  // Tracks the current active main page (Home, About, Approach, Insights)
+  const [lastMainActive, setLastMainActive] = useState("Home");
+
+  const isContactPage = location.pathname === "/contact";
+
+  const handleNavClick = (clickedName: string) => {
+    setIsOpen(false);
+    
+    if (clickedName === "Contact Us") return;
+
+    // If we're clicking the page we're already on (and it's not contact)
+    if (!isContactPage && clickedName === lastMainActive) return;
+
+    const clickedIndex = mainSlots.indexOf(clickedName);
+    if (clickedIndex !== -1) {
+      const newSlots = [...mainSlots];
+      // Swap the clicked link with the page we're leaving (the last main active one)
+      newSlots[clickedIndex] = lastMainActive;
+      setMainSlots(newSlots);
+      setLastMainActive(clickedName);
+    }
+  };
+
+  // If we are on Contact, we show all 4 main links (3 from slots + 1 last active)
+  // If we are on a Main page, we show the 3 main slots
+  const visibleLinks = isContactPage 
+    ? [...mainSlots, lastMainActive]
+    : mainSlots;
 
   return (
     <>
-      <nav className="fixed top-4 lg:top-6 left-1/2 -translate-x-1/2 w-[92%] lg:w-[95%] max-w-6xl z-50 flex justify-between items-center px-4 lg:px-8 py-1 lg:py-1 bg-brand-nav-bg border border-brand-brown-accent/20 rounded-full shadow-lg">
+      <nav className="fixed top-4 lg:top-6 left-1/2 -translate-x-1/2 w-[92%] lg:w-[95%] max-w-6xl z-50 flex justify-between items-center px-4 lg:px-8 py-2 lg:py-2 bg-brand-nav-bg border border-brand-brown-accent/20 rounded-full shadow-lg">
         {/* Logo - clickable */}
         <Link 
           to="/" 
+          onClick={() => handleNavClick("Home")}
           className="flex items-center gap-2 lg:gap-4 cursor-pointer"
         >
           <img 
@@ -41,17 +75,28 @@ export const Navbar = () => {
         {/* Desktop Nav Links */}
         <div className="hidden lg:flex items-center gap-12">
           <div className="flex gap-10 text-[11px] font-extrabold tracking-[0.2em] uppercase text-brand-nav-text font-montserrat">
-            {navLinks.map((link) => (
-              link.href.startsWith("/") ? (
-                <Link key={link.name} to={link.href} className="hover:text-brand-brown-accent transition-colors">{link.name}</Link>
-              ) : (
-                <a key={link.name} href={link.href} className="hover:text-brand-brown-accent transition-colors">{link.name}</a>
-              )
+            {visibleLinks.map((name) => (
+              <Link 
+                key={name} 
+                to={pageMap[name]} 
+                onClick={() => handleNavClick(name)}
+                className="hover:text-brand-brown-accent transition-colors"
+              >
+                {name}
+              </Link>
             ))}
           </div>
-          <button className="bg-brand-green-accent border-2 border-brand-brown-accent px-8 py-3 text-[11px] font-extrabold tracking-widest uppercase text-white hover:bg-brand-brown-accent transition-all rounded-full shadow-sm font-montserrat">
-            Contact Us
-          </button>
+          
+          {/* Contact Us button logic */}
+          {!isContactPage && (
+            <Link 
+              to="/contact" 
+              onClick={() => handleNavClick("Contact Us")}
+              className="inline-flex items-center justify-center bg-brand-green-accent border-2 border-[#9C6B3E] px-8 py-3 text-[11px] font-extrabold tracking-widest uppercase text-white hover:bg-[#9C6B3E] transition-all rounded-full font-montserrat whitespace-nowrap"
+            >
+              Contact Us
+            </Link>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -73,31 +118,26 @@ export const Navbar = () => {
             className="fixed inset-0 z-40 lg:hidden bg-brand-nav-bg/95 backdrop-blur-md pt-24 px-8"
           >
             <div className="flex flex-col gap-8">
-              {navLinks.map((link) => (
-                link.href.startsWith("/") ? (
-                  <Link 
-                    key={link.name} 
-                    to={link.href} 
-                    className="text-2xl font-lora font-bold text-brand-nav-text hover:text-brand-brown-accent transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                ) : (
-                  <a 
-                    key={link.name} 
-                    href={link.href} 
-                    className="text-2xl font-lora font-bold text-brand-nav-text hover:text-brand-brown-accent transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.name}
-                  </a>
-                )
+              {visibleLinks.map((name) => (
+                <Link 
+                  key={name} 
+                  to={pageMap[name]} 
+                  className="text-2xl font-lora font-bold text-brand-nav-text hover:text-brand-brown-accent transition-colors"
+                  onClick={() => handleNavClick(name)}
+                >
+                  {name}
+                </Link>
               ))}
               <hr className="border-brand-brown-accent/20" />
-              <button className="w-full bg-brand-green-accent border-2 border-brand-brown-accent px-8 py-5 text-sm font-extrabold tracking-widest uppercase text-white hover:bg-brand-brown-accent transition-all rounded-full shadow-sm font-montserrat">
-                Contact Us
-              </button>
+              {!isContactPage && (
+                <Link 
+                  to="/contact"
+                  onClick={() => handleNavClick("Contact Us")}
+                  className="flex items-center justify-center w-full bg-brand-green-accent border-2 border-[#9C6B3E] px-8 py-5 text-sm font-extrabold tracking-widest uppercase text-white hover:bg-[#9C6B3E] transition-all rounded-full font-montserrat text-center"
+                >
+                  Contact Us
+                </Link>
+              )}
             </div>
           </motion.div>
         )}
