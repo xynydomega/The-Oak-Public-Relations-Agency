@@ -54,7 +54,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-4 lg:top-6 left-1/2 -translate-x-1/2 w-[92%] lg:w-[95%] max-w-6xl z-50 flex justify-between items-center px-4 lg:px-8 py-2 lg:py-2 bg-brand-nav-bg border border-brand-brown-accent/20 rounded-full shadow-lg">
+      <nav className="fixed top-4 lg:top-6 left-1/2 -translate-x-1/2 w-[92%] lg:w-[95%] max-w-6xl z-50 flex justify-between items-center px-4 lg:px-8 py-1 lg:py-1 bg-brand-nav-bg border border-brand-brown-accent/20 rounded-full">
         {/* Logo - clickable */}
         <Link 
           to="/" 
@@ -92,7 +92,7 @@ export const Navbar = () => {
             <Link 
               to="/contact" 
               onClick={() => handleNavClick("Contact Us")}
-              className="inline-flex items-center justify-center bg-brand-green-accent border-2 border-[#9C6B3E] px-8 py-3 text-[11px] font-extrabold tracking-widest uppercase text-white hover:bg-[#9C6B3E] transition-all rounded-full font-montserrat whitespace-nowrap"
+              className="inline-block bg-brand-green-accent border-2 border-[#9C6B3E] px-8 py-3 text-[11px] font-extrabold tracking-widest uppercase text-white hover:bg-[#9C6B3E] transition-all rounded-full font-montserrat"
             >
               Contact Us
             </Link>
@@ -133,7 +133,7 @@ export const Navbar = () => {
                 <Link 
                   to="/contact"
                   onClick={() => handleNavClick("Contact Us")}
-                  className="flex items-center justify-center w-full bg-brand-green-accent border-2 border-[#9C6B3E] px-8 py-5 text-sm font-extrabold tracking-widest uppercase text-white hover:bg-[#9C6B3E] transition-all rounded-full font-montserrat text-center"
+                  className="block w-full bg-brand-green-accent border-2 border-[#9C6B3E] px-8 py-5 text-sm font-extrabold tracking-widest uppercase text-white hover:bg-[#9C6B3E] transition-all rounded-full font-montserrat text-center"
                 >
                   Contact Us
                 </Link>

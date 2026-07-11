@@ -29,9 +29,9 @@ export const Footer = () => {
         {/* Navigation */}
         <nav className="flex gap-8 text-[10px] font-extrabold tracking-[0.2em] uppercase text-white/60 font-montserrat">
           <Link to="/about" className="hover:text-[#9C6B3E] transition-colors">About</Link>
-          <a href="#" className="hover:text-[#9C6B3E] transition-colors">Our Approach</a>
-          <a href="#" className="hover:text-[#9C6B3E] transition-colors">Insights</a>
-          <a href="#" className="hover:text-[#9C6B3E] transition-colors">Contact</a>
+          <Link to="/approach" className="hover:text-[#9C6B3E] transition-colors">Our Approach</Link>
+          <Link to="/insights" className="hover:text-[#9C6B3E] transition-colors">Insights</Link>
+          <Link to="/contact" className="hover:text-[#9C6B3E] transition-colors">Contact</Link>
         </nav>
 
         {/* Copyright & Top */}

@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight, Sprout } from "lucide-react";
+import { Link } from "react-router-dom";
 import rootsImg from "../assets/images/mossy_tree_roots_1783358118304.jpg";
 
 export const Foundation = () => {
@@ -42,10 +43,10 @@ export const Foundation = () => {
             Every message, interview, campaign, and conversation shapes how your organisation is remembered. We ensure each one reinforces your reputation, builds trust, and supports your long-term ambitions.
           </p>
 
-          <button className="flex items-center gap-3 text-xs font-bold tracking-widest uppercase group">
+          <Link to="/approach" className="flex items-center gap-3 text-xs font-bold tracking-widest uppercase group">
             Our Approach
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </Link>
 
           {/* Abstract Leaf Decoration (Watermark) */}
           <div className="absolute bottom-0 right-0 p-8 opacity-[0.03] pointer-events-none">

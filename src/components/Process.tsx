@@ -62,7 +62,7 @@ export const Process = () => {
           <div className="grid md:grid-cols-4 gap-12 relative">
             {steps.map((step, idx) => (
               <div key={idx} className="flex flex-col items-center text-center group">
-                <div className="w-16 h-16 rounded-full border border-white/20 bg-[#2F4F3E] flex items-center justify-center mb-8 relative z-10 group-hover:border-[#9C6B3E] transition-colors duration-500 shadow-lg">
+                <div className="w-16 h-16 rounded-full border border-white/20 bg-[#2F4F3E] flex items-center justify-center mb-8 relative z-10 group-hover:border-[#9C6B3E] transition-colors duration-500">
                    <div className="w-10 h-10 rounded-full border border-white/5 flex items-center justify-center text-[10px] font-bold text-white/40 group-hover:text-[#9C6B3E]">
                       {step.id}
                    </div>

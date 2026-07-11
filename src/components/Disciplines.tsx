@@ -67,7 +67,7 @@ export const Disciplines = () => {
                 }}
                 className="bg-[#2F4F3E] border-[3px] border-[#9C6B3E] p-8 lg:p-10 flex flex-col items-center text-center group hover:bg-[#2F4F3E]/90 transition-all duration-500 rounded-3xl lg:rounded-[2.5rem] shadow-[0_0_40px_rgba(156,107,62,0.25)] hover:shadow-[0_0_60px_rgba(156,107,62,0.45)]"
               >
-                <div className="w-16 h-16 rounded-2xl border border-brand-gold/30 flex items-center justify-center mb-8 text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-dark transition-all duration-500 shadow-lg">
+                <div className="w-16 h-16 rounded-2xl border border-brand-gold/30 flex items-center justify-center mb-8 text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-dark transition-all duration-500">
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-lora font-bold mb-6 text-[#EFEAE2]">

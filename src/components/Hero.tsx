@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImg from "../assets/images/hero.png";
 
 export const Hero = () => {
@@ -34,15 +35,19 @@ export const Hero = () => {
           Strategic communication that helps organisations earn trust, shape perception, and create lasting impact.
         </motion.p>
 
-        <motion.button 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-          className="group flex items-center gap-4 bg-brand-brown-accent hover:bg-brand-green-accent border-2 border-brand-green-accent px-8 py-4 text-sm font-medium tracking-widest uppercase transition-all rounded-full text-white shadow-xl shadow-brand-green-accent/40"
         >
-          Discover Our Approach
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </motion.button>
+          <Link 
+            to="/approach"
+            className="group inline-flex items-center gap-4 bg-brand-brown-accent hover:bg-brand-green-accent border-2 border-brand-green-accent px-8 py-4 text-sm font-medium tracking-widest uppercase transition-all rounded-full text-white shadow-xl shadow-brand-green-accent/40"
+          >
+            Discover Our Approach
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
       </div>
 
       {/* Scroll Indicator */}

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { Link } from "react-router-dom";
 import { ArrowRight, Briefcase, HandHeart, Building2, Mic2, Sprout, ShieldCheck, MessageSquare, TrendingUp, Target, Sparkles, Shield } from "lucide-react";
 import aboutHero from "../assets/images/about hero.png.jpeg";
 import section2Img from "../assets/images/about section 2.png";
@@ -346,10 +347,13 @@ export const About = () => {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="mt-20 flex justify-center"
             >
-              <button className="group flex items-center gap-4 bg-[#2F4F3E] border border-[#9C6B3E] px-12 py-5 rounded-full text-xs font-bold tracking-[0.2em] uppercase text-[#EFEAE2] hover:bg-transparent hover:text-[#9C6B3E] transition-all font-montserrat shadow-[0_20px_50px_rgba(47,79,62,0.5)]">
+              <Link 
+                to="/approach"
+                className="group flex items-center gap-4 bg-[#2F4F3E] border border-[#9C6B3E] px-12 py-5 rounded-full text-xs font-bold tracking-[0.2em] uppercase text-[#EFEAE2] hover:bg-transparent hover:text-[#9C6B3E] transition-all font-montserrat shadow-[0_20px_50px_rgba(47,79,62,0.5)]"
+              >
                 Our Approach
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
