@@ -1,21 +1,22 @@
 import { motion } from "motion/react";
 import { Play, ArrowRight } from "lucide-react";
+import { Button } from "./Button";
 import impactImg from "../assets/images/lighthouse_cliff_1783358132203.jpg";
 
 export const Impact = () => {
   return (
-    <div className="h-full flex items-center justify-center p-4 lg:p-20">
+    <div className="h-full flex items-center justify-center px-4 md:px-8 lg:p-20 pt-16 pb-8 md:pt-24 md:pb-12">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="w-full max-w-6xl bg-black/30 backdrop-blur-xl border border-white/10 p-8 lg:p-20 rounded-3xl lg:rounded-[4rem] shadow-[0_30px_100px_-20px_rgba(0,0,0,0.5)] relative overflow-hidden"
+        className="w-full max-w-6xl bg-black/30 backdrop-blur-xl border border-white/10 p-6 md:p-12 lg:p-20 rounded-[2rem] md:rounded-3xl lg:rounded-[4rem] shadow-[0_30px_100px_-20px_rgba(0,0,0,0.5)] relative"
       >
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-12 lg:gap-20 items-center relative z-10">
           {/* Left Content */}
           <div>
-            <h2 className="text-3xl lg:text-5xl font-lora font-bold leading-tight mb-6 lg:mb-8 text-[#EFEAE2]">
-              In a world of noise, <br />
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-lora font-bold leading-tight mb-6 lg:mb-8 text-[#EFEAE2]">
+              In a world of noise, <br className="hidden md:block" />
               clarity is <span className="italic text-[#9C6B3E]">influence.</span>
             </h2>
             
@@ -25,8 +26,8 @@ export const Impact = () => {
               </p>
               
               <div className="py-2 lg:py-4 border-l-2 border-[#9C6B3E] pl-6 my-6 lg:my-8">
-                <span className="block text-3xl lg:text-4xl font-lora font-bold text-[#9C6B3E] mb-1">81%</span>
-                <p className="text-xs lg:text-sm italic font-medium">
+                <span className="block text-2xl md:text-3xl lg:text-4xl font-lora font-bold text-[#9C6B3E] mb-1">81%</span>
+                <p className="text-[10px] md:text-xs lg:text-sm italic font-medium">
                   of consumers say they need to trust a brand before buying from it.
                 </p>
               </div>
@@ -36,10 +37,10 @@ export const Impact = () => {
               </p>
             </div>
 
-            <button className="flex items-center gap-4 bg-[#9C6B3E] border-[3px] border-[#2F4F3E] px-8 lg:px-10 py-4 lg:py-5 rounded-full text-[10px] lg:text-[12px] font-bold tracking-widest uppercase text-white shadow-[0_15px_35px_-10px_rgba(47,79,62,0.6)] hover:shadow-[0_25px_50px_-10px_rgba(47,79,62,0.8)] hover:-translate-y-1 transition-all duration-300">
+            <Button variant="primary" size="md" className="w-full md:w-auto border-[#2F4F3E] shadow-[0_15px_35px_-10px_rgba(47,79,62,0.6)] hover:shadow-[0_25px_50px_-10px_rgba(47,79,62,0.8)] hover:-translate-y-1">
               Why It Matters Now
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </Button>
           </div>
 
           {/* Right Content - Floating Rounded Image */}

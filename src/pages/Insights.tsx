@@ -28,16 +28,16 @@ export const Insights = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-[#0A1A10]" />
         </div>
 
-        <div className="relative z-10 px-6 lg:px-20 text-center max-w-7xl mx-auto pt-20">
+        <div className="relative z-10 px-6 md:px-12 lg:px-20 text-center max-w-7xl mx-auto pt-24 lg:pt-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <h1 className="text-5xl lg:text-9xl font-lora font-bold text-[#EFEAE2] mb-8 leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-9xl font-lora font-bold text-[#EFEAE2] mb-6 md:mb-8 leading-tight">
               Insights & <span className="italic text-[#9C6B3E]">Perspectives.</span>
             </h1>
-            <p className="text-lg lg:text-2xl text-[#EFEAE2]/90 font-montserrat max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-base md:text-xl lg:text-2xl text-[#EFEAE2]/90 font-montserrat max-w-3xl mx-auto leading-relaxed font-light">
               Thought leadership at the intersection of strategy, communication, and enduring reputation.
             </p>
           </motion.div>

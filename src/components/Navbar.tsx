@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import logo from "../assets/images/logo.png.png";
@@ -7,6 +7,7 @@ import logo from "../assets/images/logo.png.png";
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   
   const pageMap: Record<string, string> = {
     "Home": "/",
@@ -56,22 +57,27 @@ export const Navbar = () => {
     <>
       <nav className="fixed top-4 lg:top-6 left-1/2 -translate-x-1/2 w-[92%] lg:w-[95%] max-w-6xl z-50 flex justify-between items-center px-4 lg:px-8 py-1 lg:py-1 bg-brand-nav-bg border border-brand-brown-accent/20 rounded-full">
         {/* Logo - clickable */}
-        <Link 
-          to="/" 
-          onClick={() => handleNavClick("Home")}
-          className="flex items-center gap-2 lg:gap-4 cursor-pointer"
-        >
-          <img 
-            src={logo} 
-            alt="The Oak Logo" 
-            className="w-10 h-10 lg:w-14 lg:h-14 object-contain" 
-          />
-          <div className="flex flex-col leading-none font-lora">
-            <span className="text-brand-nav-text text-base lg:text-lg tracking-tight font-extrabold uppercase">The OAK</span>
-            <span className="text-brand-nav-text/80 text-[6px] lg:text-[8px] uppercase tracking-[0.2em] font-bold">Public Relations Agency</span>
-          </div>
-        </Link>
+     <Link
+  to="/"
+  onClick={() => handleNavClick("Home")}
+  className="flex items-center gap-2 lg:gap-4 no-underline"
+>
+  <img
+    src={logo}
+    alt="The Oak Logo"
+    className="w-10 h-10 lg:w-14 lg:h-14 object-contain"
+  />
 
+ <div className="flex flex-col font-lora">
+  <span className="text-brand-nav-text text-base lg:text-lg tracking-tight font-extrabold uppercase">
+    The OAK
+  </span>
+
+  <span className="mt-1 text-brand-nav-text/80 text-[6px] lg:text-[8px] uppercase tracking-[0.2em] font-bold">
+    Public Relations Agency
+  </span>
+</div>
+</Link>
         {/* Desktop Nav Links */}
         <div className="hidden lg:flex items-center gap-12">
           <div className="flex gap-10 text-[11px] font-extrabold tracking-[0.2em] uppercase text-brand-nav-text font-montserrat">
@@ -89,13 +95,15 @@ export const Navbar = () => {
           
           {/* Contact Us button logic */}
           {!isContactPage && (
-            <Link 
-              to="/contact" 
-              onClick={() => handleNavClick("Contact Us")}
-              className="inline-block bg-brand-green-accent border-2 border-[#9C6B3E] px-8 py-3 text-[11px] font-extrabold tracking-widest uppercase text-white hover:bg-[#9C6B3E] transition-all rounded-full font-montserrat"
+            <button 
+              onClick={() => {
+                handleNavClick("Contact Us");
+                navigate("/contact");
+              }}
+              className="group inline-flex items-center gap-3 bg-brand-green-accent hover:bg-brand-brown-accent border-2 border-brand-brown-accent rounded-full px-6 py-2.5 lg:px-8 lg:py-3 text-[10px] lg:text-[11px] font-extrabold tracking-[0.2em] uppercase text-white transition-all duration-300 shadow-lg shadow-brand-brown-accent/20 font-montserrat"
             >
               Contact Us
-            </Link>
+            </button>
           )}
         </div>
 
@@ -130,13 +138,15 @@ export const Navbar = () => {
               ))}
               <hr className="border-brand-brown-accent/20" />
               {!isContactPage && (
-                <Link 
-                  to="/contact"
-                  onClick={() => handleNavClick("Contact Us")}
-                  className="block w-full bg-brand-green-accent border-2 border-[#9C6B3E] px-8 py-5 text-sm font-extrabold tracking-widest uppercase text-white hover:bg-[#9C6B3E] transition-all rounded-full font-montserrat text-center"
+                <button 
+                  onClick={() => {
+                    handleNavClick("Contact Us");
+                    navigate("/contact");
+                  }}
+                  className="w-full bg-brand-green-accent border-2 border-brand-brown-accent px-8 py-5 text-sm font-extrabold tracking-[0.2em] uppercase text-white hover:bg-brand-brown-accent transition-all rounded-full font-montserrat text-center shadow-lg shadow-brand-brown-accent/20"
                 >
                   Contact Us
-                </Link>
+                </button>
               )}
             </div>
           </motion.div>

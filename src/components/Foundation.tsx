@@ -5,16 +5,16 @@ import rootsImg from "../assets/images/mossy_tree_roots_1783358118304.jpg";
 
 export const Foundation = () => {
   return (
-    <div className="h-full flex items-center justify-center p-8 lg:p-24">
+    <div className="h-full flex items-center justify-center px-6 md:px-12 lg:px-24 py-4 lg:py-6">
       <motion.div 
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-        className="grid lg:grid-cols-2 w-full max-w-6xl gap-0 overflow-hidden rounded-[2.5rem] shadow-[0_40px_80px_-15px_rgba(0,0,0,0.6)] border border-white/5 bg-brand-dark/40 backdrop-blur-sm"
+        className="grid lg:grid-cols-2 w-full max-w-6xl gap-0 overflow-hidden rounded-[2rem] md:rounded-[2.5rem] shadow-[0_40px_80px_-15px_rgba(0,0,0,0.6)] border border-white/5 bg-brand-dark/40 backdrop-blur-sm"
       >
         {/* Left: Image */}
-        <div className="h-[400px] lg:h-auto relative overflow-hidden">
+        <div className="h-[300px] md:h-[400px] lg:h-auto relative overflow-hidden">
           <img 
             src={rootsImg} 
             alt="Roots" 
@@ -28,23 +28,23 @@ export const Foundation = () => {
         </div>
 
         {/* Right: Content Card */}
-        <div className="bg-brand-cream text-brand-dark p-12 lg:p-20 flex flex-col justify-center relative">
-          <div className="mb-8">
-            <div className="w-12 h-12 rounded-xl bg-brand-green-accent/10 flex items-center justify-center border border-brand-green-accent/20">
-              <Sprout className="w-6 h-6 text-brand-green-accent" />
+        <div className="bg-brand-cream text-brand-dark p-8 md:p-12 lg:p-20 flex flex-col justify-center relative">
+          <div className="mb-6 lg:mb-8">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-brand-green-accent/10 flex items-center justify-center border border-brand-green-accent/20">
+              <Sprout className="w-5 h-5 md:w-6 md:h-6 text-brand-green-accent" />
             </div>
           </div>
 
-          <h2 className="text-4xl lg:text-5xl font-lora font-bold leading-tight mb-8">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-lora font-bold leading-tight mb-2 lg:mb-3">
             <span className="text-[#2F503F]">Growth</span> begins with <br /> <span className="text-[#9C6C3E]">perception</span>.
           </h2>
           
-          <p className="text-[#1C1B17] font-montserrat text-base leading-relaxed tracking-tight mb-10 max-w-lg">
+          <p className="text-[#1C1B17] font-montserrat text-sm md:text-base leading-relaxed tracking-tight mb-4 lg:mb-6 max-w-lg">
             Every message, interview, campaign, and conversation shapes how your organisation is remembered. We ensure each one reinforces your reputation, builds trust, and supports your long-term ambitions.
           </p>
 
           <Link to="/approach" className="flex items-center gap-3 text-xs font-bold tracking-widest uppercase group">
-            Our Approach
+           ABOUT US
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
 

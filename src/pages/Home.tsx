@@ -9,33 +9,33 @@ import { Section } from "../components/Section";
 
 export const Home = () => {
   return (
-    <main className="space-y-24 lg:space-y-32">
+    <main className="space-y-8 lg:space-y-12">
       {/* Screen 1: The Opening */}
-      <Section>
+      <Section fullHeight={false}>
         <Hero />
       </Section>
       {/* Screen 2: The Foundation */}
-      <Section>
+      <Section fullHeight={false}>
         <Foundation />
       </Section>
       {/* Screen 3: The Disciplines */}
-      <Section>
+      <Section fullHeight={false}>
         <Disciplines />
       </Section>
       {/* Screen 4: The Impact */}
-      <Section>
+      <Section fullHeight={false}>
         <Impact />
       </Section>
       {/* Screen 5: Our Process */}
-      <Section>
+      <Section fullHeight={false}>
         <Process />
       </Section>
       {/* Screen 6: Thought Leadership */}
-      <Section>
+      <Section fullHeight={false}>
         <Insights />
       </Section>
       {/* Screen 7: The Invitation */}
-      <Section>
+      <Section fullHeight={false}>
         <Invitation />
       </Section>
     </main>

@@ -107,11 +107,11 @@ export const OurApproach = () => {
   ];
 
   return (
-    <div className="pt-24 lg:pt-32 pb-20">
+    <div className="pt-24 lg:pt-32 pb-12 md:pb-20">
       {/* Hero Section */}
-      <section className="px-6 lg:px-20 mb-24 lg:mb-40">
+      <section className="px-6 md:px-12 lg:px-20 mb-20 lg:mb-40">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -121,7 +121,7 @@ export const OurApproach = () => {
               <h1 className="text-4xl md:text-6xl lg:text-9xl font-lora font-bold leading-tight lg:leading-[0.9] mb-8 lg:mb-12 text-[#EFEAE2]">
                 Purpose before <span className="italic text-[#9C6B3E]">process.</span>
               </h1>
-              <p className="text-lg md:text-xl lg:text-2xl text-[#EFEAE2]/80 leading-relaxed font-montserrat font-medium max-w-2xl mb-8 lg:mb-12">
+              <p className="text-base md:text-xl lg:text-2xl text-[#EFEAE2]/80 leading-relaxed font-montserrat font-medium max-w-2xl mb-8 lg:mb-12">
                 We don't begin with campaigns or press releases. We begin by understanding your organisation, your audience, and the outcomes you hope to achieve. From there, every recommendation is intentional, measured, and aligned with your vision.
               </p>
               <div className="flex flex-wrap gap-3 lg:gap-4">

@@ -1,10 +1,11 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
+import { Button } from "./Button";
 import inviteImg from "../assets/images/team_building_collaboration_1783400524104.jpg";
 
 export const Invitation = () => {
   return (
-    <div className="relative min-h-[90vh] flex flex-col justify-center px-8 lg:px-20 overflow-hidden bg-[#1a1915]">
+    <div className="relative min-h-[80vh] md:min-h-[90vh] flex flex-col justify-center px-6 md:px-12 lg:px-20 py-20 lg:py-0 overflow-hidden bg-[#1a1915]">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -23,19 +24,23 @@ export const Invitation = () => {
         transition={{ duration: 1 }}
         className="relative z-10 max-w-3xl"
       >
-        <h2 className="text-4xl sm:text-5xl lg:text-8xl font-lora font-bold leading-tight mb-6 lg:mb-8 text-[#EFEAE2]">
-          Let's build something <br />
+        <h2 className="text-3xl md:text-5xl lg:text-7xl font-lora font-bold leading-tight mb-6 lg:mb-10 text-[#EFEAE2]">
+          Let's build something <br className="hidden md:block" />
           <span className="italic text-[#9C6B3E]">that lasts.</span>
         </h2>
 
-        <p className="text-lg lg:text-2xl text-[#EFEAE2]/70 max-w-xl leading-relaxed mb-10 lg:mb-12 font-montserrat font-light">
+        <p className="text-base md:text-xl lg:text-2xl text-[#EFEAE2]/70 max-w-xl leading-relaxed mb-10 lg:mb-12 font-montserrat font-light">
           We're here to help you communicate with purpose and lead with confidence.
         </p>
 
-        <button className="group flex items-center gap-4 bg-[#9C6B3E] border-[3px] border-[#2F4F3E] px-8 lg:px-12 py-4 lg:py-6 rounded-full text-xs lg:text-sm font-bold tracking-widest uppercase text-white shadow-[0_20px_40px_-10px_rgba(47,79,62,0.6)] hover:shadow-[0_30px_60px_-10px_rgba(47,79,62,0.8)] hover:-translate-y-2 transition-all duration-300 font-montserrat">
+        <Button 
+          variant="primary" 
+          size="lg" 
+          className="w-full md:w-auto border-[#2F4F3E] shadow-[0_20px_40px_-10px_rgba(47,79,62,0.6)] hover:shadow-[0_30px_60px_-10px_rgba(47,79,62,0.8)] hover:-translate-y-2 font-montserrat"
+        >
           Start a Conversation
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-        </button>
+        </Button>
       </motion.div>
 
       {/* Decorative Blur Orbs */}

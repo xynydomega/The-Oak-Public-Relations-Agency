@@ -74,18 +74,18 @@ export const About = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
             >
-              <h1 className="text-6xl lg:text-8xl font-lora font-bold leading-[1] mb-12 text-[#EFEAE2]">
-                What <span className="text-[#2F4F3E]">shapes</span> a <br />
-                <span className="text-[#2F4F3E]">reputation</span> that <br />
+              <h1 className="text-4xl md:text-6xl lg:text-8xl font-lora font-bold leading-tight lg:leading-[1] mb-8 lg:mb-12 text-[#EFEAE2]">
+                What <span className="text-[#2F4F3E]">shapes</span> a <br className="hidden md:block" />
+                <span className="text-[#2F4F3E]">reputation</span> that <br className="hidden md:block" />
                 <span className="italic text-[#9C6B3E]">endures?</span>
               </h1>
-              <div className="space-y-10">
-                <div className="pl-8 border-l-4 border-[#9C6B3E]">
-                  <p className="text-2xl lg:text-4xl font-lora font-bold text-[#9C6B3E] leading-tight italic">
+              <div className="space-y-6 lg:space-y-10">
+                <div className="pl-6 md:pl-8 border-l-4 border-[#9C6B3E]">
+                  <p className="text-xl md:text-2xl lg:text-4xl font-lora font-bold text-[#9C6B3E] leading-tight italic">
                     We believe trust is built through intentional communication.
                   </p>
                 </div>
-                <p className="text-lg lg:text-xl text-[#EFEAE2]/90 leading-relaxed font-montserrat font-medium max-w-2xl">
+                <p className="text-base md:text-lg lg:text-xl text-[#EFEAE2]/90 leading-relaxed font-montserrat font-medium max-w-2xl">
                   Every message, relationship, and decision contributes to how an organisation is perceived. We help ensure each one reflects your purpose and strengthens your reputation.
                 </p>
               </div>
@@ -117,7 +117,7 @@ export const About = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-[#9C6B3E] font-lora font-bold text-3xl lg:text-5xl uppercase tracking-[0.1em] mb-12"
+            className="text-[#9C6B3E] font-lora font-bold text-2xl md:text-3xl lg:text-5xl uppercase tracking-[0.1em] mb-8 lg:mb-12"
           >
             Why We Exist
           </motion.h2>
@@ -127,7 +127,7 @@ export const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="relative w-full min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center rounded-[3rem] lg:rounded-[5rem] overflow-hidden border border-white/10 group"
+            className="relative w-full min-h-[70vh] md:min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center rounded-[2rem] md:rounded-[3rem] lg:rounded-[5rem] overflow-hidden border border-white/10 group"
           >
             <img 
               src={section2Img} 
@@ -180,9 +180,9 @@ export const About = () => {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-12 lg:mb-16"
+            className="mb-8 lg:mb-16"
           >
-            <h2 className="text-[#9C6B3E] font-lora font-bold text-3xl lg:text-5xl uppercase tracking-[0.1em]">
+            <h2 className="text-[#9C6B3E] font-lora font-bold text-2xl md:text-3xl lg:text-5xl uppercase tracking-[0.1em]">
               Why Oak.
             </h2>
           </motion.div>
@@ -192,19 +192,19 @@ export const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-[3rem] p-12 lg:p-24"
+            className="bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-[2rem] md:rounded-[3rem] p-8 md:p-12 lg:p-24"
           >
             {/* Heading and Sub-copy above the divide */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-center mb-16 lg:mb-24"
+              className="text-center mb-12 lg:mb-24"
             >
-              <h3 className="text-[#9C6B3E] font-montserrat font-bold text-4xl lg:text-6xl leading-tight mb-6 uppercase tracking-tight">
+              <h3 className="text-[#9C6B3E] font-montserrat font-bold text-3xl md:text-4xl lg:text-6xl leading-tight mb-4 lg:mb-6 uppercase tracking-tight">
                 Our Purpose.
               </h3>
-              <p className="text-[#EFEAE2]/80 font-montserrat text-lg lg:text-xl leading-relaxed font-semibold max-w-3xl mx-auto">
+              <p className="text-[#EFEAE2]/80 font-montserrat text-base md:text-lg lg:text-xl leading-relaxed font-semibold max-w-3xl mx-auto">
                 A philosophy that shapes every strategy, every message, and every relationship we build.
               </p>
             </motion.div>

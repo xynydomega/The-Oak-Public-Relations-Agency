@@ -16,16 +16,16 @@ export const Contact = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-[#0A1A10]" />
         </div>
 
-        <div className="relative z-10 px-6 lg:px-20 text-center max-w-7xl mx-auto pt-20">
+        <div className="relative z-10 px-6 md:px-12 lg:px-20 text-center max-w-7xl mx-auto pt-24 lg:pt-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <h1 className="text-5xl lg:text-7xl font-lora font-bold text-[#EFEAE2] mb-8 leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-lora font-bold text-[#EFEAE2] mb-6 md:mb-8 leading-tight">
               Let's start the <span className="italic text-[#9C6B3E]">conversation.</span>
             </h1>
-            <p className="text-[#EFEAE2]/90 text-xl lg:text-2xl font-montserrat max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-base md:text-lg lg:text-2xl text-[#EFEAE2]/90 font-montserrat max-w-3xl mx-auto leading-relaxed font-light">
               Whether you're building a reputation, navigating change, or planning your next chapter, we're here to help. Tell us about your organisation, and we'll be in touch.
             </p>
           </motion.div>

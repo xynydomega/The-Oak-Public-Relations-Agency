@@ -26,7 +26,7 @@ const steps = [
 
 export const Process = () => {
   return (
-    <div className="h-full flex flex-col justify-center px-6 lg:px-20 py-16 lg:py-20 relative overflow-hidden">
+    <div className="h-full flex flex-col justify-center px-6 lg:px-20 pt-8 pb-16 lg:pt-12 lg:pb-20 relative overflow-hidden">
       <div className="max-w-6xl mx-auto w-full z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

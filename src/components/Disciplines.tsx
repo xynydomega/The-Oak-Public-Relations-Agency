@@ -24,23 +24,23 @@ const disciplines = [
 
 export const Disciplines = () => {
   return (
-    <div className="h-full flex flex-col justify-center px-6 lg:px-20 py-16 lg:py-20">
+    <div className="h-full flex flex-col justify-center px-6 md:px-12 lg:px-20 py-8 lg:py-12">
       <div className="max-w-6xl mx-auto w-full">
-        <div className="flex justify-center mb-8 lg:mb-12">
+        <div className="flex justify-center mb-4 lg:mb-6">
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full border border-brand-gold/20 flex items-center justify-center bg-brand-gold/5 backdrop-blur-sm">
-              <Trees className="w-10 h-10 lg:w-12 lg:h-12 text-brand-gold opacity-80" strokeWidth={1.2} />
+            <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full border border-brand-gold/20 flex items-center justify-center bg-brand-gold/5 backdrop-blur-sm">
+              <Trees className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-brand-gold opacity-80" strokeWidth={1.2} />
             </div>
             {/* Decorative outer ring */}
             <div className="absolute inset-0 -m-3 border border-brand-gold/10 rounded-full animate-pulse" />
           </motion.div>
         </div>
-        <h2 className="text-3xl lg:text-4xl font-lora font-bold text-center mb-12 lg:mb-20 text-balance text-[#EFEAE2]">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-lora font-bold text-center mb-6 lg:mb-10 text-balance text-[#EFEAE2]">
           We shape how you are <span className="italic text-[#9C6C3E]">understood.</span>
         </h2>
 
