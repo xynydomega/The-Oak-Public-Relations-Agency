@@ -27,7 +27,7 @@ export const Insights = () => {
     <div className="h-full flex items-center justify-center p-4 lg:p-20">
       <div className="bg-[#1C1B17] text-[#EFEAE2] w-full max-w-7xl rounded-3xl lg:rounded-[3rem] border border-white/10 shadow-2xl overflow-hidden flex flex-col lg:flex-row backdrop-blur-xl bg-black/40">
         {/* Left Side Title */}
-        <div className="lg:w-1/3 p-8 lg:p-20 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col justify-between relative overflow-hidden">
+        <div className="lg:w-1/3 p-6 lg:p-8 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col justify-between relative overflow-hidden">
           <div className="relative z-10">
             <h2 className="text-3xl lg:text-5xl font-lora font-bold leading-tight">
               Insights that inform. <br />
