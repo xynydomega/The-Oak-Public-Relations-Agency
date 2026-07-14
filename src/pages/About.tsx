@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Briefcase, HandHeart, Building2, Mic2, Sprout, ShieldCheck, MessageSquare, TrendingUp, Target, Sparkles, Shield } from "lucide-react";
-import aboutHero from "../assets/images/about hero.png.jpeg";
+import aboutHero from "../assets/images/about_hero.jpg";
 import section2Img from "../assets/images/about section 2.png";
 import section3Img from "../assets/images/about image 3.png";
 import section4Img from "../assets/images/about image 4.jpg";
@@ -66,22 +66,22 @@ export const About = () => {
   return (
     <div className="pt-24 lg:pt-32 pb-20 overflow-hidden">
       {/* Hero Section */}
-      <section className="px-6 lg:px-20 mb-24 lg:mb-40">
+      <section className="px-6 lg:px-20 mb-20 lg:mb-40">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
             >
-              <h1 className="text-4xl md:text-6xl lg:text-8xl font-lora font-bold leading-tight lg:leading-[1] mb-8 lg:mb-12 text-[#EFEAE2]">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-lora font-bold leading-[1.1] lg:leading-[1] mb-6 lg:mb-12 text-[#EFEAE2]">
                 What <span className="text-[#2F4F3E]">shapes</span> a <br className="hidden md:block" />
                 <span className="text-[#2F4F3E]">reputation</span> that <br className="hidden md:block" />
                 <span className="italic text-[#9C6B3E]">endures?</span>
               </h1>
               <div className="space-y-6 lg:space-y-10">
                 <div className="pl-6 md:pl-8 border-l-4 border-[#9C6B3E]">
-                  <p className="text-xl md:text-2xl lg:text-4xl font-lora font-bold text-[#9C6B3E] leading-tight italic">
+                  <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-lora font-bold text-[#9C6B3E] leading-tight italic">
                     We believe trust is built through intentional communication.
                   </p>
                 </div>
@@ -94,7 +94,7 @@ export const About = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="relative aspect-[4/5] rounded-[3.5rem] overflow-hidden border-[6px] border-[#9C6B3E] shadow-[0_0_80px_rgba(47,79,62,0.6)]"
+              className="relative aspect-[4/5] lg:aspect-[3.5/5] rounded-[2.5rem] lg:rounded-[3.5rem] overflow-hidden border-4 lg:border-[6px] border-[#9C6B3E] shadow-[0_0_80px_rgba(47,79,62,0.4)]"
             >
               <img 
                 src={aboutHero} 
