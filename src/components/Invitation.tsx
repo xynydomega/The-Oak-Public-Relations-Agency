@@ -2,8 +2,10 @@ import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "./Button";
 import inviteImg from "../assets/images/team_building_collaboration_1783400524104.jpg";
+import { useNavigate } from "react-router-dom";
 
 export const Invitation = () => {
+  const navigate = useNavigate();
   return (
     <div className="relative min-h-[80vh] md:min-h-[90vh] flex flex-col justify-center px-6 md:px-12 lg:px-20 py-20 lg:py-0 overflow-hidden bg-[#1a1915]">
       {/* Background Image with Overlay */}
@@ -34,6 +36,7 @@ export const Invitation = () => {
         </p>
 
         <Button 
+        onClick={() => navigate("/contact")}
           variant="primary" 
           size="lg" 
           className="w-full md:w-auto border-[#2F4F3E] shadow-[0_20px_40px_-10px_rgba(47,79,62,0.6)] hover:shadow-[0_30px_60px_-10px_rgba(47,79,62,0.8)] hover:-translate-y-2 font-montserrat"

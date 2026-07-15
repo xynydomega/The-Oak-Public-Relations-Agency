@@ -1,12 +1,15 @@
 import { motion } from "motion/react";
-import { Link } from "react-router-dom";
 import { ArrowRight, Compass, Search, Target, Megaphone, TrendingUp, Trees, Check, Shield, Newspaper, AlertCircle, Mic, Users, Zap, BarChart3, RefreshCw } from "lucide-react";
 import majesticOak from "../assets/images/majestic_oak_hero_1783358103672.jpg";
 import strategicImg from "../assets/images/lighthouse_cliff_1783358132203.jpg";
+import { Link, useNavigate } from "react-router-dom";
+
+
 
 import section6Img from "../assets/images/about image 6.jpg";
 
 export const OurApproach = () => {
+  const navigate = useNavigate();
   const serviceCategories = [
     {
       icon: <Compass className="w-10 h-10 stroke-[2.5]" />,
@@ -342,13 +345,13 @@ export const OurApproach = () => {
               Every enduring reputation starts <br />
               <span className="italic text-[#9C6B3E]">with a single conversation.</span>
             </h2>
-            <Link 
-              to="/contact"
-              className="group inline-flex items-center gap-4 lg:gap-6 bg-[#9C6B3E] px-8 lg:px-16 py-5 lg:py-8 rounded-full text-xs lg:text-sm font-bold tracking-[0.2em] uppercase text-white hover:bg-[#2F4F3E] transition-all mx-auto font-montserrat shadow-[0_15px_40px_rgba(156,107,62,0.3)] hover:shadow-[0_20px_50px_rgba(47,79,62,0.3)]"
-            >
-              Start the Conversation
-              <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-2 transition-transform" />
-            </Link>
+            <button
+        onClick={() => navigate("/contact")}
+        className="group inline-flex items-center gap-3 bg-brand-brown-accent hover:bg-brand-green-accent border-2 border-brand-green-accent rounded-full px-6 py-3 md:px-8 md:py-4 text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase text-white transition-all duration-300 shadow-lg shadow-brand-green-accent/30"
+      >
+        Start A Conversation
+        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+      </button>
           </motion.div>
         </div>
       </section>
