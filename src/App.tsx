@@ -6,6 +6,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Insights } from "./pages/Insights";
@@ -15,6 +16,7 @@ import { Contact } from "./pages/Contact";
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen relative overflow-x-hidden">
         {/* Global Background Hue Overlay */}
         <div className="fixed inset-0 z-0 bg-brand-dark" />

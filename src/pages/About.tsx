@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Link } from "react-router-dom";
-import { ArrowRight, Briefcase, HandHeart, Building2, Mic2, Sprout, ShieldCheck, MessageSquare, TrendingUp, Target, Sparkles, Shield } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { ArrowRight, Briefcase, HandHeart, Building2, Mic2, Sprout, ShieldCheck, MessageSquare, TrendingUp, Target, Sparkles, Shield, Users } from "lucide-react";
 import aboutHero from "../assets/images/about_hero.jpg";
 import section2Img from "../assets/images/about section 2.png";
 import section3Img from "../assets/images/about image 3.png";
@@ -11,6 +11,7 @@ import section6Img from "../assets/images/about image 6.jpg";
 import teamImg from "../assets/images/team_building_collaboration_1783400524104.jpg";
 
 export const About = () => {
+  const navigate = useNavigate();
   const pillars = [
     {
       icon: <Briefcase className="w-8 h-8" />,
@@ -137,7 +138,7 @@ export const About = () => {
             
             {/* Elegant Overlay with Specific Diagonal Gradient - #1A1A1A for Readability */}
             <div 
-              className="absolute inset-0 backdrop-blur-[2px] flex items-center justify-center p-12 lg:p-24 text-center"
+              className="absolute inset-0 backdrop-blur-[2px] flex items-center justify-center p-8 lg:p-16 text-center"
               style={{
                 background: 'linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(47, 79, 62, 0.6) 50%, rgba(156, 107, 62, 0.6) 100%)'
               }}
@@ -147,7 +148,7 @@ export const About = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
-                  className="text-2xl lg:text-5xl font-montserrat font-bold text-[#EFEAE2] mb-12 lg:mb-16 leading-tight px-4"
+                  className="text-xl lg:text-4xl font-montserrat font-bold text-[#EFEAE2] mb-8 lg:mb-12 leading-tight px-4"
                 >
                   Perception shapes every <span className="text-[#9C6B3E]">opportunity</span>.
                 </motion.h3>
@@ -159,13 +160,13 @@ export const About = () => {
                   className="relative px-8 lg:px-24"
                 >
                   {/* Large Quotation Marks with Flair and Brighter Color */}
-                  <span className="absolute -top-12 lg:-top-16 -left-4 lg:left-0 text-7xl lg:text-[10rem] text-[#9C6B3E] font-lora italic leading-none select-none drop-shadow-[0_0_15px_rgba(156,107,62,0.3)]">“</span>
+                  <span className="absolute -top-10 lg:-top-14 -left-2 lg:left-0 text-5xl lg:text-[7rem] text-[#9C6B3E] font-lora italic leading-none select-none drop-shadow-[0_0_15px_rgba(156,107,62,0.3)]">“</span>
                   
-                  <p className="text-[#EFEAE2] font-montserrat font-semibold text-lg lg:text-2xl leading-relaxed lg:leading-relaxed tracking-wide">
+                  <p className="text-[#EFEAE2] font-montserrat font-semibold text-sm lg:text-lg leading-relaxed lg:leading-relaxed tracking-wide">
                     Organisations are judged long before conversations begin. Every interaction, every message, and every decision contributes to how they are understood. We believe communication should never be left to chance—it should be guided with purpose, clarity, and intention.
                   </p>
 
-                  <span className="absolute -bottom-12 lg:-bottom-16 -right-4 lg:right-0 text-7xl lg:text-[10rem] text-[#9C6B3E] font-lora italic leading-none select-none drop-shadow-[0_0_15px_rgba(156,107,62,0.3)]">”</span>
+                  <span className="absolute -bottom-10 lg:-bottom-14 -right-2 lg:right-0 text-5xl lg:text-[7rem] text-[#9C6B3E] font-lora italic leading-none select-none drop-shadow-[0_0_15px_rgba(156,107,62,0.3)]">”</span>
                 </motion.div>
               </div>
             </div>
@@ -210,13 +211,29 @@ export const About = () => {
             </motion.div>
 
             {/* Divided section below */}
-            <div className="grid lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20 items-start">
-              <div className="flex flex-col gap-12">
+            <div className="flex flex-col lg:grid lg:grid-cols-[5fr_7fr] gap-10 lg:gap-20 items-start">
+              <div className="flex flex-col gap-10 lg:gap-12 w-full">
+                {/* 1. Identity vs Reputation - Move to top of narrative */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 0.3 }}
+                >
+                  <div className="border-l-4 border-[#9C6B3E] pl-5 lg:pl-10 py-1 mb-6 lg:mb-10">
+                    <p className="text-[#9C6B3E] font-montserrat text-xl lg:text-3xl leading-relaxed font-semibold">
+                      Identity is what you stand for. Reputation is what others come to believe about you.
+                    </p>
+                  </div>
+                  <p className="text-[#EFEAE2]/70 font-montserrat text-base md:text-lg lg:text-xl leading-relaxed">
+                    The two are not always the same. An organisation may be exceptional in its work, yet remain misunderstood. It may possess integrity, expertise, and vision, but if those qualities are not communicated with intention, perception begins to drift from reality.
+                  </p>
+                </motion.div>
+
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1 }}
-                  className="relative aspect-[4/5] rounded-[2rem] overflow-hidden"
+                  className="relative aspect-square md:aspect-[4/5] rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden"
                 >
                   <img 
                     src={section3Img} 
@@ -226,18 +243,19 @@ export const About = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </motion.div>
 
+                {/* 2. Perception isn't the enemy */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.3 }}
                   className="max-w-xl"
                 >
-                  <div className="border-l-4 border-[#9C6B3E] pl-6 lg:pl-10 py-1 mb-8">
-                    <p className="text-[#9C6B3E] font-montserrat text-xl lg:text-2xl leading-relaxed font-semibold">
+                  <div className="border-l-4 border-[#9C6B3E] pl-5 lg:pl-10 py-1 mb-6 lg:mb-8">
+                    <p className="text-[#9C6B3E] font-montserrat text-lg md:text-xl lg:text-2xl leading-relaxed font-semibold">
                       Perception isn't the enemy. Misaligned perception is.
                     </p>
                   </div>
-                  <p className="text-[#EFEAE2]/60 font-montserrat text-lg lg:text-xl leading-relaxed">
+                  <p className="text-[#EFEAE2]/60 font-montserrat text-base md:text-lg lg:text-xl leading-relaxed">
                     When identity and perception fall out of alignment, trust weakens, opportunities are lost, and organisations can be overshadowed by those who communicate more effectively. That is where we begin.
                   </p>
                 </motion.div>
@@ -246,7 +264,7 @@ export const About = () => {
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1, delay: 0.4 }}
-                  className="relative aspect-[4/5] rounded-[2rem] overflow-hidden"
+                  className="relative aspect-square md:aspect-[4/5] rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden"
                 >
                   <img 
                     src={section5Img} 
@@ -255,46 +273,30 @@ export const About = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </motion.div>
+              </div>
 
+              <div className="flex flex-col gap-10 lg:gap-12 w-full lg:pt-8">
+                {/* 3. Aligning Identity */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.5 }}
                 >
-                  <div className="border-l-4 border-[#9C6B3E] pl-6 lg:pl-10 py-1 mb-10">
-                    <p className="text-[#9C6B3E] font-montserrat text-xl lg:text-3xl leading-relaxed font-semibold uppercase tracking-wider">
+                  <div className="border-l-4 border-[#9C6B3E] pl-5 lg:pl-10 py-1 mb-8 lg:mb-10">
+                    <p className="text-[#9C6B3E] font-montserrat text-lg md:text-xl lg:text-3xl leading-relaxed font-semibold uppercase tracking-wider">
                       We Align Identity With Perception.
                     </p>
                   </div>
-                  <p className="text-[#EFEAE2]/70 font-montserrat text-lg lg:text-xl leading-relaxed">
+                  <p className="text-[#EFEAE2]/70 font-montserrat text-base md:text-lg lg:text-xl leading-relaxed">
                     Through thoughtful strategy, clear communication, and clarity of purpose, we shape public perception with intention—building brands recognised for confidence, integrity, competence, and stability. Like the oak, they earn trust not through noise, but through consistency over time.
                   </p>
                 </motion.div>
-              </div>
-
-              <div className="flex flex-col justify-center pt-8 gap-12">
-                <div className="grid lg:grid-cols-1 gap-8 items-start">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, delay: 0.4 }}
-                  >
-                    <div className="border-l-4 border-[#9C6B3E] pl-6 lg:pl-10 py-1 mb-10">
-                      <p className="text-[#9C6B3E] font-montserrat text-xl lg:text-3xl leading-relaxed font-semibold">
-                        Identity is what you stand for. Reputation is what others come to believe about you.
-                      </p>
-                    </div>
-                    <p className="text-[#EFEAE2]/70 font-montserrat text-lg lg:text-xl leading-relaxed">
-                      The two are not always the same. An organisation may be exceptional in its work, yet remain misunderstood. It may possess integrity, expertise, and vision, but if those qualities are not communicated with intention, perception begins to drift from reality.
-                    </p>
-                  </motion.div>
-                </div>
 
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1, delay: 0.5 }}
-                  className="relative aspect-[16/9] rounded-[2rem] overflow-hidden"
+                  className="relative aspect-[16/9] rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden"
                 >
                   <img 
                     src={section4Img} 
@@ -304,21 +306,22 @@ export const About = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </motion.div>
 
+                {/* 4. That is where we begin */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.6 }}
                 >
-                  <div className="border-l-4 border-[#9C6B3E] pl-6 lg:pl-10 py-1 mb-10">
+                  <div className="border-l-4 border-[#9C6B3E] pl-5 lg:pl-10 py-1 mb-8 lg:mb-10">
                     <p className="text-[#9C6B3E] font-montserrat text-xl lg:text-3xl leading-relaxed font-semibold">
                       That is where we begin.
                     </p>
                   </div>
-                  <div className="flex flex-col gap-8">
-                    <p className="text-[#EFEAE2]/70 font-montserrat text-lg lg:text-xl leading-relaxed">
+                  <div className="flex flex-col gap-6 lg:gap-8">
+                    <p className="text-[#EFEAE2]/70 font-montserrat text-base md:text-lg lg:text-xl leading-relaxed">
                       Our role is not to manufacture reputations. It is to bring identity and perception into alignment, ensuring that what the world sees faithfully reflects who you are.
                     </p>
-                    <p className="text-[#EFEAE2]/70 font-montserrat text-lg lg:text-xl leading-relaxed">
+                    <p className="text-[#EFEAE2]/70 font-montserrat text-base md:text-lg lg:text-xl leading-relaxed">
                       The oak is more than our name. It is the standard we measure ourselves against. A symbol of endurance, quiet confidence, stability, and lasting strength. These are the qualities that define an enduring reputation, and they guide every strategy we create, every message we shape, and every relationship we help our clients build.
                     </p>
                   </div>
@@ -328,7 +331,7 @@ export const About = () => {
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1, delay: 0.7 }}
-                  className="relative aspect-[4/5] rounded-[2rem] overflow-hidden"
+                  className="relative aspect-square md:aspect-[4/5] rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden"
                 >
                   <img 
                     src={teamImg} 
@@ -345,15 +348,15 @@ export const About = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="mt-20 flex justify-center"
+              className="mt-12 lg:mt-20 flex justify-center"
             >
-              <Link 
-                to="/approach"
-                className="group flex items-center gap-4 bg-[#2F4F3E] border border-[#9C6B3E] px-12 py-5 rounded-full text-xs font-bold tracking-[0.2em] uppercase text-[#EFEAE2] hover:bg-transparent hover:text-[#9C6B3E] transition-all font-montserrat shadow-[0_20px_50px_rgba(47,79,62,0.5)]"
-              >
-                Our Approach
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              <button
+        onClick={() => navigate("/approach")}
+        className="group inline-flex items-center gap-3 bg-brand-brown-accent hover:bg-brand-green-accent border-2 border-brand-green-accent rounded-full px-6 py-3 md:px-8 md:py-4 text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase text-white transition-all duration-300 shadow-lg shadow-brand-green-accent/30"
+      >
+        Discover Our Approach
+        
+      </button>
             </motion.div>
           </motion.div>
         </div>
@@ -367,35 +370,52 @@ export const About = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-16"
+            className="mb-16 text-center flex flex-col items-center justify-center gap-4"
           >
+            <div className="bg-[#9C6B3E]/10 p-4 rounded-full mb-2">
+              <Users className="w-8 h-8 lg:w-10 lg:h-10 text-[#9C6B3E]" />
+            </div>
             <h2 className="text-[#9C6B3E] font-lora font-bold text-3xl lg:text-5xl uppercase tracking-[0.1em]">
               Who We Work With
             </h2>
           </motion.div>
 
-          <div className="relative">
+          <div className="relative overflow-hidden lg:overflow-visible px-4 lg:px-0">
             {/* Mobile Carousel */}
-            <motion.div 
-              animate={{ x: `-${currentIndex * 100}%` }}
-              transition={{ duration: 1, ease: [0.32, 0.72, 0, 1] }}
-              className="flex lg:hidden"
-            >
-              {pillars.map((pillar) => (
-                <div
-                  key={pillar.title}
-                  className="min-w-full p-12 rounded-[2.5rem] border border-white/5 bg-white/[0.02] transition-all"
-                >
-                  <div className="text-[#9C6B3E] mb-8">
-                    {pillar.icon}
-                  </div>
-                  <h3 className="text-2xl font-montserrat font-bold text-[#EFEAE2] mb-6">{pillar.title}</h3>
-                  <p className="text-[#EFEAE2]/50 font-montserrat leading-relaxed">
-                    {pillar.description}
-                  </p>
-                </div>
-              ))}
-            </motion.div>
+            <div className="lg:hidden relative">
+              <motion.div 
+                animate={{ x: `calc(-${currentIndex} * (100% + 2rem))` }}
+                transition={{ duration: 1, ease: [0.32, 0.72, 0, 1] }}
+                className="flex gap-8"
+              >
+                {Array.from({ length: 1000 }).map((_, globalIdx) => {
+                  const pillar = pillars[globalIdx % pillars.length];
+                  const isActive = globalIdx === currentIndex;
+                  
+                  return (
+                    <div
+                      key={`${pillar.title}-${globalIdx}`}
+                      onClick={() => navigate("/insights")}
+                      className={`min-w-full p-8 md:p-10 rounded-[2rem] border transition-all duration-700 cursor-pointer shadow-xl ${
+                        isActive 
+                          ? "border-[#9C6B3E] bg-[#2F4F3E] opacity-100 scale-100 shadow-[0_20px_50px_rgba(47,79,62,0.5)]" 
+                          : "border-[#9C6B3E]/30 bg-[#2F4F3E]/40 opacity-40 scale-[0.98]"
+                      }`}
+                    >
+                      <div className={`transition-colors duration-700 ${isActive ? "text-[#9C6B3E]" : "text-[#9C6B3E]/50"} mb-6`}>
+                        {pillar.icon}
+                      </div>
+                      <h3 className={`text-xl md:text-2xl font-montserrat font-bold mb-4 transition-colors duration-700 ${isActive ? "text-[#EFEAE2]" : "text-[#EFEAE2]/60"}`}>
+                        {pillar.title}
+                      </h3>
+                      <p className={`text-sm md:text-base font-montserrat leading-relaxed transition-colors duration-700 ${isActive ? "text-[#EFEAE2]/80" : "text-[#EFEAE2]/30"}`}>
+                        {pillar.description}
+                      </p>
+                    </div>
+                  );
+                })}
+              </motion.div>
+            </div>
 
             {/* Desktop Carousel - Individual movement with center focus */}
             <div className="hidden lg:block relative">
@@ -417,14 +437,15 @@ export const About = () => {
                         <motion.div
                           animate={{ 
                             scale: isCenter ? 1.15 : 0.9,
-                            opacity: isCenter ? 1 : 0.85,
+                            opacity: isCenter ? 1 : 0.6,
                             y: isCenter ? -15 : 0
                           }}
+                          onClick={() => navigate("/insights")}
                           transition={{ duration: 0.8, ease: "easeOut" }}
-                          className={`h-full p-12 rounded-[3rem] border transition-all duration-1000 flex flex-col justify-between ${
+                          className={`h-full p-12 rounded-[3rem] border transition-all duration-1000 flex flex-col justify-between cursor-pointer shadow-2xl ${
                             isCenter 
-                              ? "bg-white/[0.12] border-[#9C6B3E] shadow-[0_0_120px_-20px_rgba(156,107,62,0.8)] z-20" 
-                              : "border-white/10 bg-white/[0.04] z-10"
+                              ? "bg-[#2F4F3E] border-[#9C6B3E] shadow-[0_30px_70px_rgba(47,79,62,0.7)] z-20" 
+                              : "bg-[#2F4F3E]/40 border-[#9C6B3E]/30 shadow-[0_15px_35px_rgba(0,0,0,0.3)] z-10"
                           }`}
                         >
                           <div>
@@ -548,10 +569,13 @@ export const About = () => {
               Let's craft your <br />
               <span className="italic text-[#9C6B3E]">legacy together.</span>
             </h2>
-            <button className="group flex items-center gap-6 bg-[#9C6B3E] px-16 py-8 rounded-full text-sm font-bold tracking-[0.2em] uppercase text-white hover:bg-[#2F4F3E] transition-all mx-auto font-montserrat shadow-[0_20px_50px_rgba(156,107,62,0.3)] hover:shadow-[0_20px_50px_rgba(47,79,62,0.3)]">
-              Start a Conversation
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-            </button>
+            <button
+        onClick={() => navigate("/approach")}
+        className="group inline-flex items-center gap-3 bg-brand-brown-accent hover:bg-brand-green-accent border-2 border-brand-green-accent rounded-full px-6 py-3 md:px-8 md:py-4 text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase text-white transition-all duration-300 shadow-lg shadow-brand-green-accent/30"
+      >
+        Discover Our Approach
+        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+      </button>
           </motion.div>
         </div>
       </section>

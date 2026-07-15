@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowRight, MessageSquare, Shield, Users, Trees } from "lucide-react";
 
@@ -23,6 +24,8 @@ const disciplines = [
 ];
 
 export const Disciplines = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="h-full flex flex-col justify-center px-6 md:px-12 lg:px-20 py-8 lg:py-12">
       <div className="max-w-6xl mx-auto w-full">
@@ -65,7 +68,8 @@ export const Disciplines = () => {
                   y: -15,
                   transition: { duration: 0.3, ease: "easeOut" }
                 }}
-                className="bg-[#2F4F3E] border-[3px] border-[#9C6B3E] p-8 lg:p-10 flex flex-col items-center text-center group hover:bg-[#2F4F3E]/90 transition-all duration-500 rounded-3xl lg:rounded-[2.5rem] shadow-[0_0_40px_rgba(156,107,62,0.25)] hover:shadow-[0_0_60px_rgba(156,107,62,0.45)]"
+                onClick={() => navigate("/insights")}
+                className="bg-[#2F4F3E] border-[3px] border-[#9C6B3E] p-8 lg:p-10 flex flex-col items-center text-center group hover:bg-[#2F4F3E]/90 transition-all duration-500 rounded-3xl lg:rounded-[2.5rem] shadow-[0_20px_40px_rgba(47,79,62,0.4)] hover:shadow-[0_30px_60px_rgba(47,79,62,0.6)] cursor-pointer"
               >
                 <div className="w-16 h-16 rounded-2xl border border-brand-gold/30 flex items-center justify-center mb-8 text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-dark transition-all duration-500">
                   {item.icon}
@@ -82,10 +86,10 @@ export const Disciplines = () => {
                   </p>
                 </div>
 
-                <button className="mt-auto flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-brand-gold/60 hover:text-brand-gold transition-colors">
+                <div className="mt-auto flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-brand-gold/60 group-hover:text-brand-gold transition-colors">
                   Insights
-                  <ArrowRight className="w-3 h-3" />
-                </button>
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                </div>
               </motion.div>
             );
           })}

@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import deskImg from "../assets/images/insight_desk_book_1783358144019.jpg";
 import leavesImg from "../assets/images/insight_oak_leaves_1783358154623.jpg";
 import forestImg from "../assets/images/insight_misty_forest_1783358165144.jpg";
+import { Link, useNavigate } from "react-router-dom"
 
 const articles = [
   {
@@ -23,6 +24,8 @@ const articles = [
 ];
 
 export const Insights = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="h-full flex items-center justify-center p-4 lg:p-20">
       <div className="bg-[#1C1B17] text-[#EFEAE2] w-full max-w-7xl rounded-3xl lg:rounded-[3rem] border border-white/10 shadow-2xl overflow-hidden flex flex-col lg:flex-row backdrop-blur-xl bg-black/40">
@@ -35,7 +38,8 @@ export const Insights = () => {
             </h2>
           </div>
           
-          <button className="mt-8 lg:mt-12 flex items-center gap-3 text-xs font-bold tracking-widest uppercase group font-montserrat relative z-10">
+          <button
+           onClick={() => navigate("/insights")} className="mt-8 lg:mt-12 flex items-center gap-3 text-xs font-bold tracking-widest uppercase group font-montserrat relative z-10">
             Explore Insights
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
@@ -57,7 +61,9 @@ export const Insights = () => {
               </div>
               <p className="text-[10px] font-bold tracking-widest uppercase text-[#9C6B3E] mb-3 font-montserrat">{article.category}</p>
               <h3 className="text-xl font-lora font-bold leading-snug mb-6 group-hover:text-[#9C6B3E] transition-colors">{article.title}</h3>
-              <button className="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase border-b border-white/10 pb-1 font-montserrat group-hover:border-[#9C6B3E] transition-colors">
+              <button
+               onClick={() => navigate("/insights")}
+               className="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase border-b border-white/10 pb-1 font-montserrat group-hover:border-[#9C6B3E] transition-colors">
                 Read more
                 <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </button>

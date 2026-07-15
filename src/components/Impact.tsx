@@ -2,8 +2,10 @@ import { motion } from "motion/react";
 import { Play, ArrowRight } from "lucide-react";
 import { Button } from "./Button";
 import impactImg from "../assets/images/lighthouse_cliff_1783358132203.jpg";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Impact = () => {
+  const navigate = useNavigate();
   return (
     <div className="h-full flex items-center justify-center px-4 md:px-8 lg:p-20 pt-16 pb-8 md:pt-24 md:pb-12">
       <motion.div 
@@ -37,7 +39,9 @@ export const Impact = () => {
               </p>
             </div>
 
-            <Button variant="primary" size="md" className="w-full md:w-auto border-[#2F4F3E] shadow-[0_15px_35px_-10px_rgba(47,79,62,0.6)] hover:shadow-[0_25px_50px_-10px_rgba(47,79,62,0.8)] hover:-translate-y-1">
+            <Button 
+            onClick={() => navigate("/about")}
+             variant="primary" size="md" className="w-full md:w-auto border-[#2F4F3E] shadow-[0_15px_35px_-10px_rgba(47,79,62,0.6)] hover:shadow-[0_25px_50px_-10px_rgba(47,79,62,0.8)] hover:-translate-y-1">
               Why It Matters Now
               <ArrowRight className="w-4 h-4" />
             </Button>

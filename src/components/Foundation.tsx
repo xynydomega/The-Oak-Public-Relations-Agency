@@ -43,7 +43,7 @@ export const Foundation = () => {
             Every message, interview, campaign, and conversation shapes how your organisation is remembered. We ensure each one reinforces your reputation, builds trust, and supports your long-term ambitions.
           </p>
 
-          <Link to="/approach" className="flex items-center gap-3 text-xs font-bold tracking-widest uppercase group">
+          <Link to="/about" className="flex items-center gap-3 text-xs font-bold tracking-widest uppercase group">
            ABOUT US
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
