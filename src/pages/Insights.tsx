@@ -149,18 +149,10 @@ const exploreRef = useRef<HTMLDivElement>(null);
       
   {/* Re-use the existing Insights section component as a footer/cta area */}
       <InsightsSection />
-      <button
-  onClick={() =>
-    exploreRef.current?.scrollIntoView({
-      behavior: "smooth",
-    })
-  }
->
-  Explore Insights
-</button>
+    
 
       {/* Main Grid */}
-      <div ref={exploreRef} className="max-w-7xl mx-auto mb-12 text-center">
+      <div ref={exploreRef} className="max-w-7xl mx-auto mt-40 mb-12 text-center">
   <h2 className="text-4xl lg:text-5xl font-lora font-bold text-[#EFEAE2] mb-4">
     Explore <span className="italic text-[#9C6B3E]">Insights.</span>
   </h2>
