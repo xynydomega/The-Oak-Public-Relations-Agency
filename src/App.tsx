@@ -12,6 +12,9 @@ import { About } from "./pages/About";
 import { Insights } from "./pages/Insights";
 import { OurApproach } from "./pages/OurApproach";
 import { Contact } from "./pages/Contact";
+import { Article } from "./pages/Article";
+import watermark from "./assets/images/brand-pattern.png";
+
 
 export default function App() {
   return (
@@ -22,6 +25,22 @@ export default function App() {
         <div className="fixed inset-0 z-0 bg-brand-dark" />
         <div className="fixed inset-0 z-1 bg-[linear-gradient(135deg,#101B15_0%,#101B15_35%,#2A2E21_50%,#85745B_75%,#7D5532_100%)] opacity-85" />
         
+        <img
+  src={watermark}
+  alt=""
+  className="
+    fixed
+    inset-0
+    w-full
+    h-full
+    object-cover
+    opacity-[0.08]
+    pointer-events-none
+    select-none
+    z-[2]
+  "
+/>
+ 
         <div className="relative z-10">
           <Navbar />
           
@@ -31,7 +50,10 @@ export default function App() {
             <Route path="/insights" element={<Insights />} />
             <Route path="/approach" element={<OurApproach />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/insights/:slug" element={<Article />} />
+            
           </Routes>
+          
 
           <Footer />
         </div>

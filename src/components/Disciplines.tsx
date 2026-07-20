@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowRight, MessageSquare, Shield, Users, Trees } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const disciplines = [
   {
@@ -26,6 +27,18 @@ const disciplines = [
 export const Disciplines = () => {
   const navigate = useNavigate();
 
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % disciplines.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const item = disciplines[current];
+
   return (
     <div className="h-full flex flex-col justify-center px-6 md:px-12 lg:px-20 py-8 lg:py-12">
       <div className="max-w-6xl mx-auto w-full">
@@ -47,7 +60,61 @@ export const Disciplines = () => {
           We shape how you are <span className="italic text-[#9C6C3E]">understood.</span>
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-8">
+
+          {/* Mobile Carousel */}
+<div className="md:hidden">
+
+  <motion.div
+    key={current}
+    initial={{ opacity: 0, x: 40 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.5 }}
+    className="bg-[#2F4F3E] border-[3px] border-[#9C6B3E] p-8 flex flex-col items-center text-center rounded-3xl shadow-[0_20px_40px_rgba(47,79,62,0.4)]"
+  >
+
+    <div className="w-16 h-16 rounded-2xl border border-brand-gold/30 flex items-center justify-center mb-8 text-brand-gold">
+      {item.icon}
+    </div>
+
+    <h3 className="text-xl font-lora font-bold mb-6 text-[#EFEAE2]">
+      {item.title}
+    </h3>
+
+    <div className="text-sm leading-relaxed font-montserrat">
+      <p className="font-bold text-[#EFEAE2] mb-3">
+        {item.tagline}
+      </p>
+
+      <p className="text-white/70">
+        {item.description}
+      </p>
+    </div>
+
+    <div className="mt-8 flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-[#9C6B3E]">
+      Insights
+      <ArrowRight className="w-3 h-3" />
+    </div>
+
+  </motion.div>
+
+
+  {/* Carousel indicators */}
+  <div className="flex justify-center gap-2 mt-6">
+    {disciplines.map((_, index) => (
+      <button
+        key={index}
+        onClick={() => setCurrent(index)}
+        className={`h-2 rounded-full transition-all ${
+          current === index
+            ? "bg-[#9C6B3E] w-6"
+            : "bg-white/20 w-2"
+        }`}
+      />
+    ))}
+  </div>
+
+</div>
+ <div className="hidden md:grid md:grid-cols-3 gap-8 lg:gap-8">
           {disciplines.map((item, idx) => {
             const descWords = item.description.split(' ');
             const lastWord = descWords.pop();
