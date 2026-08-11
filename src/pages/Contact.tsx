@@ -134,9 +134,10 @@ export const Contact = () => {
               <div>
                 <h3 className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#9C6B3E] mb-8 font-montserrat">Direct Contact</h3>
                 <div className="space-y-6">
-                  <a href="mailto:inquiry@brand.com" className="group flex items-center gap-6 text-2xl lg:text-3xl font-lora text-[#EFEAE2] hover:text-[#9C6B3E] transition-colors">
+                  <a href="mailto:Info@theoakpr.com" className="group flex items-center gap-6 text-2xl lg:text-3xl font-lora text-[#EFEAE2] hover:text-[#9C6B3E] transition-colors">
                     <Mail className="w-6 h-6 text-[#9C6B3E]" />
-                    inquiry@brand.com
+                    Info@theoakpr.com
+                    
                   </a>
                   <a href="tel:+1234567890" className="group flex items-center gap-6 text-2xl lg:text-3xl font-lora text-[#EFEAE2] hover:text-[#9C6B3E] transition-colors">
                     <Phone className="w-6 h-6 text-[#9C6B3E]" />

@@ -28,18 +28,23 @@ export const Process = () => {
   return (
     <div className="h-full flex flex-col justify-center px-6 lg:px-20 pt-8 pb-16 lg:pt-12 lg:pb-20 relative overflow-hidden">
       <div className="max-w-6xl mx-auto w-full z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          animate={{ y: [0, -12, 0] }}
-          transition={{ 
-            y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
-            opacity: { duration: 0.8 },
-            y_initial: { duration: 0.8 }
-          }}
-          className="flex justify-center mb-8 lg:mb-12"
-        >
+        <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{
+    opacity: 1,
+    y: [0, -12, 0],
+  }}
+  viewport={{ once: true }}
+  transition={{
+    opacity: { duration: 0.8 },
+    y: {
+      duration: 5,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  }}
+  className="flex justify-center mb-8 lg:mb-12"
+>
           <div className="relative group">
             {/* Animated glow rings */}
             <div className="absolute inset-0 rounded-full bg-[#9C6B3E]/20 blur-xl group-hover:bg-[#9C6B3E]/30 transition-colors duration-700" />

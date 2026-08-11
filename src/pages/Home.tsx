@@ -5,7 +5,9 @@ import { Impact } from "../components/Impact";
 import { Process } from "../components/Process";
 import { Insights } from "../components/Insights";
 import { Invitation } from "../components/Invitation";
+import { Newsletter } from "../components/newsletter";
 import { Section } from "../components/Section";
+
 
 export const Home = () => {
   return (
@@ -36,8 +38,11 @@ export const Home = () => {
       </Section>
       {/* Screen 7: The Invitation */}
       <Section fullHeight={false}>
-        <Invitation />
+      <Newsletter />
       </Section>
+      <section>
+      <Invitation />
+      </section>
     </main>
   );
 };

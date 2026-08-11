@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Play, ArrowRight } from "lucide-react";
 import { Button } from "./Button";
-import impactImg from "../assets/images/lighthouse_cliff_1783358132203.jpg";
+import impactImg from "../assets/images/person-american-businessman-african-man.jpg";
 import { Link, useNavigate } from "react-router-dom";
 
 export const Impact = () => {
@@ -62,11 +62,7 @@ export const Impact = () => {
             {/* Gradient fade to the right */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#9C6B3E]/40" />
             
-            <div className="absolute inset-0 bg-black/10 flex items-center justify-center group-hover:bg-black/20 transition-colors">
-              <div className="w-20 h-20 rounded-full bg-[#9C6B3E]/80 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
-                <Play className="w-8 h-8 text-white fill-white ml-1" />
-              </div>
-            </div>
+            
           </motion.div>
         </div>
         

@@ -129,7 +129,7 @@ const exploreRef = useRef<HTMLDivElement>(null);
             </div>
           </motion.div>
         </section>
-         </Link>
+         </Link> 
         ))}
 
         {/* Categories & Filter */}
